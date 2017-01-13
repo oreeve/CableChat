@@ -1,0 +1,10 @@
+<div>
+  <h1 style="float:right;">Hi, <%= current_user.name %></h1>
+  <p class="lead"><%= link_to 'New Chat Room', new_chat_room_path, class: 'btn btn-primary' %></p>
+  <p class="lead"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %></p>
+</div>
+<h1>Chat Rooms</h1>
+
+<ul>
+  <%= render @chat_rooms %>
+</ul>

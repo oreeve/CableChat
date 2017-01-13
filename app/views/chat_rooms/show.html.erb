@@ -1,0 +1,14 @@
+<h1><%= @chat_room.title %></h1>
+<p class="lead"><%= link_to 'All Chat Rooms', chat_rooms_path, class: 'btn btn-primary' %></p>
+
+<div id="messages" data-chat-room-id="<%= @chat_room.id %>">
+  <%= render @chat_room.messages %>
+</div>
+
+<%= form_for @message, url: '#' do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, autofocus: true, class: 'form-control message-box', placeholder: 'Enter message' %>
+    <small class="text-muted">Up to 1000 characters</small>
+  </div>
+  <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
+<% end %>
